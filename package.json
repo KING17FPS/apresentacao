@@ -1,21 +1,60 @@
-{
-    "name": "app-service-hello-world",
-    "description": "Simple Hello World Node.js sample for Azure App Service",
-    "version": "0.0.1",
-    "private": true,
-    "license": "MIT",
-    "author": "Microsoft",
-    "scripts": {
-        "start": "node index.js",
-        "dev": "nodemon"
-    },
-    "dependencies": {
-        "ejs": "^3.0.1",
-        "express": "^4.17.1",
-        "nodemon": "^2.0.2"
-    },
-    "devDependencies": {
-        "gulp": "^4.0.2",
-        "gulp-imagemin": "^7.1.0"
-    }
+#include<cstring>
+#include<cstdio>
+#include<cmath>
+int main(){
+float R,pt,st,qt,soma_pg,i,tt,soma_pa,termo,an,tm,x,pt1,y;
+char resposta[10];
+printf("\n\n ************************************************************************\n");
+printf(" CALCULADORA DE PA (PROGRESSAO ARITMETICA) E PG (PROGRESSAO GEOMETRICA)\n");
+printf(" ************************************************************************\n\n");
+printf(" Integrantes do Grupo: Douglas, Victor, Larissa, Giovana, Kawann Victor\n\n");
+printf("Escolha entre PA e PG: ");
+scanf("%s",&resposta);
+if(strstr("PA",resposta)){
+printf("\nVoce escolheu PA\n\n");
+printf("\nDigite o primeiro termo: ");
+scanf("%f",&pt);
+printf("Digite o segundo termo: ");
+scanf("%f",&st);
+printf("Informe o numero de termos: ");
+scanf("%f",&termo);
+R = st - pt;
+pt1 = pt;
+printf("\nSua PA: %.1f",pt);
+while(x < termo-1){
+pt1 = pt1 + R;
+printf(", %.1f",pt1);
+x = x + 1;
+}
+an = pt + (termo - 1)*R;
+soma_pa = ((pt + an )*termo)/2;
+printf("\nRAZAO: %.1f \n",R);
+printf("TERMO GERAL (ultimo termo da PA): %.1f \n",an);
+printf("SOMA DOS TERMOS: %.1f \n",soma_pa);
+}
+else if(strstr("PG",resposta)){
+printf("\nVoce escolheu PG\n\n");
+printf("\nDigite o primeiro termo: ");
+scanf("%f",&pt);
+printf("Digite o segundo termo: ");
+scanf("%f",&st);
+printf("Informe o numero de termos: ");
+scanf("%f",&termo);
+R = st/pt;
+soma_pg = (pt*(pow(R,termo)-1))/(R-1);
+printf("\nSua PG: %.1f",pt);
+pt1 = pt;
+while(x < termo-1){
+pt1 = pt1 * R;
+printf(", %.1f",pt1);
+x = x + 1;
+}
+an = pt*pow(R,termo-1);
+printf("\nRAZAO: %.1f \n",R);
+printf("TERMO GERAL (ultimo numero da PG): %.1f \n",an);
+printf("SOMA DOS TERMOS: %.1f \n",soma_pg);
+}
+else{
+printf("\n\n\n\n\nNão compreendido \n\n\n\n\n");
+}
 }
